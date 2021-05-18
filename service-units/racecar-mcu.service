@@ -1,5 +1,5 @@
 [Unit]
-Description=lidar
+Description=mcu
 PartOf=racecar.service
 After=racecar-roscore.service
 
@@ -7,7 +7,7 @@ After=racecar-roscore.service
 Restart=on-failure
 ExecStart=/bin/sh -c "\
   . /opt/ros/melodic/setup.sh && \
-  rosrun urg_node urg_node _ip_address:=192.168.0.10"
+  rosrun rosserial_arduino serial_node.py _port:=/dev/ttyACM0"
 
 [Install]
 WantedBy=racecar.service

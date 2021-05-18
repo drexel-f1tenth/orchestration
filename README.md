@@ -15,14 +15,12 @@ Managing ROS nodes with systemd services
 - `sudo cp service-units/*.service /etc/systemd/system/`
 - `sudo cp service-units/*.sh /usr/local/sbin/`
 - `sudo systemctl daemon-reload`
-- `sudo systemctl enable racecar-*`
-
-TODO: how to run pathfinder/mcu?
+- `sudo systemctl enable racecar racecar-roscore racecar-lidar racecar-mcu racecar-pathfinder`
 
 ## Useful commands
 
 - View logs using `journalctl` (follow with the `-f` option)
-- Check status of all nodes: `sudo systemctl status racecar-*`
+- Check status of all nodes: `sudo systemctl status racecar*`
 - Stop a service: `sudo systemctl stop ${service-name}`
 - Start a service: `sudo systemctl start ${service-name}`
 - Restart a service: `sudo systemctl restart ${service-name}`

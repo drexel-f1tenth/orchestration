@@ -1,0 +1,11 @@
+[Unit]
+Description=mcu
+PartOf=racecar.service
+After=racecar-roscore.service racecar-lidar.service racecar-mcu.service
+
+[Service]
+Restart=on-failure
+ExecStart=/usr/local/sbin/pathfinder
+
+[Install]
+WantedBy=racecar.service
