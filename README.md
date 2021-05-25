@@ -19,7 +19,7 @@ Managing ROS nodes with systemd services
 
 ## Useful commands
 
-- View logs using `journalctl` (follow with the `-f` option)
+- View logs: `journalctl -fu ${service-name}`
 - Check status of all nodes: `sudo systemctl status racecar*`
 - Stop a service: `sudo systemctl stop ${service-name}`
 - Start a service: `sudo systemctl start ${service-name}`
