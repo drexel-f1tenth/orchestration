@@ -1,7 +1,10 @@
 [Unit]
 Description=roscore
 PartOf=racecar.service
-After=racecar.service NetworkManager.service time-sync.target
+After=systemd-user-sessions.service
+After=racecar.service
+After=network.target
+After=network-online.target
 
 [Service]
 Type=forking

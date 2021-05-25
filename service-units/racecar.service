@@ -4,6 +4,7 @@ Description=racecar
 [Service]
 Type=oneshot
 RemainAfterExit=yes
+ExecStartPre=/bin/sleep 10
 ExecStart=/bin/true
 
 [Install]

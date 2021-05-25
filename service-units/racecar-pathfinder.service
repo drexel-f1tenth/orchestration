@@ -1,7 +1,8 @@
 [Unit]
-Description=mcu
+Description=pathfinder
 PartOf=racecar.service
-After=racecar-roscore.service racecar-lidar.service racecar-mcu.service
+After=racecar-roscore.service
+After=racecar-lidar.service
 
 [Service]
 Restart=on-failure

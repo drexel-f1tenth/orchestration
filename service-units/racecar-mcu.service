@@ -1,10 +1,12 @@
 [Unit]
 Description=mcu
 PartOf=racecar.service
-After=racecar-roscore.service
+After=racecar-pathfinder.service
+After=dev-ttyACM0.device
+Requires=dev-ttyACM0.device
 
 [Service]
-Restart=on-failure
+Restart=on-success
 ExecStart=/bin/sh -c "\
   . /opt/ros/melodic/setup.sh && \
   rosrun rosserial_arduino serial_node.py _port:=/dev/ttyACM0"

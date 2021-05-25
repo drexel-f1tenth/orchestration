@@ -12,6 +12,11 @@ Managing ROS nodes with systemd services
 
 ## Installation
 
+The Ubuntu Modem Manager must be disabled, since it has a long init process which makes the device on /dev/ttyACM0 fail to startup on boot, because it is not a modem:
+
+`sudo systemctl disable ModemManager.service`
+
+Setup the orchestration services:
 - `sudo cp service-units/*.service /etc/systemd/system/`
 - `sudo cp service-units/*.sh /usr/local/sbin/`
 - `sudo systemctl daemon-reload`
